@@ -11,7 +11,7 @@ void EEPROM_TC::getMacAddress(byte mac[]) {
   } else {
     Serial.println(F("No MAC Address Found in EEPROM. Generating New MAC."));
     for (int i = 3; i < 6; i++) {
-      mac[i] = i;   // TrueRandom.randomByte();
+      mac[i] = i;  // TrueRandom.randomByte();
       EEPROM.write(i + MAC_ADDRESS, mac[i]);
     }
     EEPROM.write(MAC_ADDRESS, '#');
@@ -47,7 +47,7 @@ double EEPROM_TC::readKiSetPoint() {
 }
 
 void EEPROM_TC::writeKiSetPoint(double value) {
-  writeDouble(KP_ADDRESS, value);
+  writeDouble(KI_ADDRESS, value);
 }
 
 double EEPROM_TC::readKdSetPoint() {
@@ -83,7 +83,7 @@ void EEPROM_TC::writeFrequencySetPoint(double value) {
 }
 
 void EEPROM_TC::writeDouble(int address, double value) {
-  if (value != readDouble(address, 1.0/0.0)) {
+  if (value != readDouble(address, 1.0 / 0.0)) {
     byte* p = (byte*)(void*)&value;
     for (int i = 0; i < sizeof(value); i++) {
       EEPROM.write(address++, *p++);

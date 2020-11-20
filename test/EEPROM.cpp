@@ -24,9 +24,9 @@ unittest(KpSetPoint) {
 }
 
 unittest(KiSetPoint) {
-  eepromTC.writeKiSetPoint(10.1);
+  eepromTC.writeKiSetPoint(1.1);
   double value = eepromTC.readKiSetPoint();
-  assertEqual(10.1, value);
+  assertEqual(1.1, value);
 }
 
 unittest(KdSetPoint) {
@@ -38,7 +38,7 @@ unittest(KdSetPoint) {
 unittest(HeatSetPoint) {
   eepromTC.writeHeatSetPoint(7.9);
   double value = eepromTC.readHeatSetPoint();
-  assertEqual(7.9, 0);
+  assertEqual(7.9, value);
 }
 
 unittest(AmplitudeSetPoint) {

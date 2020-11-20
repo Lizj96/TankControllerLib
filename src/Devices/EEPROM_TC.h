@@ -20,8 +20,8 @@
 
 class EEPROM_TC {
 public:
-  EEPROM_TC();
-  ~EEPROM_TC();
+  EEPROM_TC() {}
+  ~EEPROM_TC() {}
   void getMacAddress(byte mac[]);
   void writeTempSetPoint(double value);
   void writepHSetPoint(double value);
